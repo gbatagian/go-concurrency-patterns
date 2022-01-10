@@ -12,21 +12,13 @@ func main() {
 	flag.Parse()
 
 	if *mode == "workerpool" {
-
 		conc.WorkerPoolMainExample()
-
 	} else if *mode == "channels" {
-
 		conc.ChannelsMainExample()
-
 	} else if *mode == "waitgroups" {
-
 		conc.WaitgroupsMainExample()
-
 	} else {
-
 		fmt.Printf("Unsupported mode: %s\n", *mode)
-
 	}
 
 }

@@ -6,47 +6,47 @@ import (
 	"time"
 )
 
-var wg sync.WaitGroup
-
 func WaitgroupsMainExample() {
 
+	var wg sync.WaitGroup
+
 	wg.Add(1)
 	go func() {
-		start := time.Now()
-		l := 0
-		m := 1_000_000
-		primes := PrimesBetween(l, m)
-		fmt.Printf("--> Done with Group 1. Primes in range [%d, %d]: %d | Time taken: %s\n", l, m, len(primes), time.Since(start))
+		t_start := time.Now()
+		start := 0
+		end := 1_000_000
+		primes := PrimesBetween(start, end)
+		fmt.Printf("--> Done with Group 1. Primes in range [%d, %d]: %d | Time taken: %s\n", start, end, len(primes), time.Since(t_start))
 		wg.Done()
 	}()
 
 	wg.Add(1)
 	go func() {
-		start := time.Now()
-		l := 0
-		m := 10_000_000
-		primes := PrimesBetween(l, m)
-		fmt.Printf("--> Done with Group 2. Primes in range [%d, %d]: %d | Time taken: %s\n", l, m, len(primes), time.Since(start))
+		t_start := time.Now()
+		start := 0
+		end := 10_000_000
+		primes := PrimesBetween(start, end)
+		fmt.Printf("--> Done with Group 2. Primes in range [%d, %d]: %d | Time taken: %s\n", start, end, len(primes), time.Since(t_start))
 		wg.Done()
 	}()
 
 	wg.Add(1)
 	go func() {
-		start := time.Now()
-		l := 0
-		m := 10_000
-		primes := PrimesBetween(l, m)
-		fmt.Printf("--> Done with Group 3. Primes in range [%d, %d]: %d | Time taken: %s\n", l, m, len(primes), time.Since(start))
+		t_start := time.Now()
+		start := 0
+		end := 10_000
+		primes := PrimesBetween(start, end)
+		fmt.Printf("--> Done with Group 3. Primes in range [%d, %d]: %d | Time taken: %s\n", start, end, len(primes), time.Since(t_start))
 		wg.Done()
 	}()
 
 	wg.Add(1)
 	go func() {
-		start := time.Now()
-		l := 0
-		m := 100_000
-		primes := PrimesBetween(l, m)
-		fmt.Printf("--> Done with Group 4. Primes in range [%d, %d]: %d | Time taken: %s\n", l, m, len(primes), time.Since(start))
+		t_start := time.Now()
+		start := 0
+		end := 100_000
+		primes := PrimesBetween(start, end)
+		fmt.Printf("--> Done with Group 4. Primes in range [%d, %d]: %d | Time taken: %s\n", start, end, len(primes), time.Since(t_start))
 		wg.Done()
 	}()
 
